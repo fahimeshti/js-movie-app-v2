@@ -73,29 +73,85 @@ body {
 .popular-container {
   width: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
 }
 .card {
-  max-width: 14rem !important;
-  min-width: 14rem !important;
+  max-width: 10rem !important;
+  min-width: 10rem !important;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   border: none;
-  margin: 5px;
-  cursor: pointer;
+  margin: 3px;
+  color: #222;
 }
 .card-body {
-  padding-top: auto !important;
+  display: none !important; /*bootstrap fix*/
 }
 .card-title {
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1.1rem;
 }
 .card-text {
-  background-color: #222222;
+  background-color: #272727d2;
   padding: 0.25rem 0.5rem;
-  /* margin-left: 1.5rem; */
   border-radius: 3px;
+  font-size: 12px;
   font-weight: bold;
+}
+.overview p.green {
+  color: lightgreen;
+}
+
+.overview p.orange {
+  color: orange;
+}
+
+.overview p.red {
+  color: red;
+}
+.overview {
+  background-color: #2a2a2ee0 !important;
+  color: #eee;
+  text-align: left;
+  font-size: 12px;
+  padding: 1rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-height: 100%;
+  will-change: transform;
+  transform: translateY(110%);
+  overflow-y: auto;
+  transition: transform 0.2s ease-in;
+}
+.overview h3 {
+  color: #2db939;
+  font-size: 14px;
+}
+.card:hover .overview {
+  transform: translateY(0);
 }
 .box-02 {
   margin-top: 25px;
+}
+.items_scroll {
+  transition: all 0.2s;
+  will-change: transform;
+  cursor: pointer;
+
+}
+.items_scroll.active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.popular-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.popular-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
